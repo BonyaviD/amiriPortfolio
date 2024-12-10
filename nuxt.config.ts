@@ -1,5 +1,24 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app:{
+    head: {
+      title: 'Amiri Kia',
+      htmlAttrs: {
+        lang: 'en',
+        dir: 'ltr'
+      },
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: 'سایت امیرحسین امیری کیا' },
+      ],
+      link: [
+        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        // { rel: 'stylesheet', href: 'https://unicons.iconscout.com/release/v4.0.8/css/line.css' }
+      ]
+    }
+  },
+  css: ['~/assets/css/main.css'],
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true }
 })
