@@ -1,0 +1,77 @@
+/* ------ Reset ------ */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  list-style: none;
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* ------ Reset ------ */
+
+/* ------ Root ------ */
+
+:root {
+    font-size: 62.5%;
+    --primary-color: #1E5128;
+    --secondary-color: #4E9F3D;
+  }
+  
+  
+  
+  /* ------ Root ------ */
+  
+  /* ------ Fonts ------ */
+  @font-face {
+    font-family: "iranyekan";
+    src: url(./../fonts/iranyekan/IRANYekanLight.ttf);
+    font-style: normal;
+    font-weight: 400;
+  }
+  
+  @font-face {
+    font-family: "iranyekan";
+    src: url(./../fonts/iranyekan/IRANYekanMedium.ttf);
+    font-style: normal;
+    font-weight: 500;
+  }
+  
+  @font-face {
+    font-family: "iranyekan";
+    src: url(./../fonts/iranyekan/IRANYekanBold.ttf);
+    font-style: normal;
+    font-weight: 700;
+  }
+  
+  
+  
+  /* ------ Fonts ------ */
+  body {
+    font-family: iranyekan , Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  
+  }
+  
+  button {
+    font-family: iranyekan , Avenir, Helvetica, Arial, sans-serif;
+  }
+  
+  /* container */
+  .container {
+    max-width: 1366px;
+    margin: 0 auto;
+  }
+  /* container */
+  
+  .content-container {
+    max-width: 1050px;
+    margin: 0 auto;
+  }
+  
