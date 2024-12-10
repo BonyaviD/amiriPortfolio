@@ -13,8 +13,7 @@ export default defineNuxtConfig({
         { hid: 'description', name: 'description', content: 'سایت امیرحسین امیری کیا' },
       ],
       link: [
-        // { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-        // { rel: 'stylesheet', href: 'https://unicons.iconscout.com/release/v4.0.8/css/line.css' }
+        
       ]
     }
   },
