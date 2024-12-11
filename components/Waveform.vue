@@ -1,39 +1,88 @@
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, nextTick } from "vue";
+import play from "@/components/icons/play.vue";
+import pause from "@/components/icons/pause.vue";
 
-let wavesurfer;
+// تعریف props برای دریافت اطلاعات صوتی
+const props = defineProps({
+  musicAdress: {
+    type: String,
+    required: true, // مسیر فایل صوتی الزامی است
+  },
+  musicId: {
+    type: Number,
+    required: true, // شناسه یکتا الزامی است
+  },
+});
 
-onMounted(() => {
+// مدیریت وضعیت پخش
+const isPlay = ref(false);
+
+// Wavesurfer instance
+let wavesurfer = ref(null);
+
+onMounted(async () => {
+  // اطمینان از رندر کامل DOM
+  await nextTick();
+
+  // دریافت Wavesurfer از پلاگین Nuxt
   const WaveSurfer = useNuxtApp().$wavesurfer;
 
   // ایجاد Wavesurfer
-  wavesurfer = WaveSurfer.create({
-    container: "#waveform", // محل نمایش موج
-    waveColor: "#4caf50", // رنگ موج
+  wavesurfer.value = WaveSurfer.create({
+    container: `#waveform-${props.musicId}`, // استفاده از id یکتا
+    waveColor: "#fff", // رنگ موج
     progressColor: "#ff5722", // رنگ پیشرفت
-    height: 200, // ارتفاع
-
-      // Set a bar width
-  barWidth: 10,
-  // Optionally, specify the spacing between bars
-  barGap: 5,
-  // And the bar radius
-  barRadius: 0,
+    barWidth: 4, // عرض میله
+    barGap: 2, // فاصله بین میله‌ها
+    barRadius: 0, // گردی میله‌ها
+    width: 350,
+    height: 40, // ارتفاع
   });
 
   // بارگذاری فایل صوتی
-  wavesurfer.load("/audio/Linkin Park - In The End.mp3"); // مسیر فایل صوتی
+  wavesurfer.value.load(props.musicAdress);
 });
 
-// پخش یا توقف
+// مدیریت پخش/توقف
 const togglePlay = () => {
-  wavesurfer.playPause();
+  isPlay.value = !isPlay.value; // تغییر وضعیت پخش
+  wavesurfer.value.playPause(); // اجرای تابع پخش/توقف
 };
 </script>
 
 <template>
-  <div>
-    <div id="waveform"></div>
-    <button @click="togglePlay">Play / Pause</button>
+  <div class="player-section">
+    <!-- دکمه پخش/توقف -->
+    <div @click="togglePlay" class="icon">
+      <pause v-if="isPlay" color="white" />
+      <play v-else color="white" />
+    </div>
+    <!-- موج صوتی -->
+    <div :id="`waveform-${props.musicId}`" class="waveform"></div>
   </div>
 </template>
+
+<style scoped>
+.player-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem;
+}
+
+.icon {
+  background-color: black;
+  padding: 0.6rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.waveform {
+  flex-grow: 1;
+}
+</style>

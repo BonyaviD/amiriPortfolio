@@ -28,7 +28,7 @@ a {
   /* ------ Root ------ */
   
   /* ------ Fonts ------ */
-  @font-face {
+  /* @font-face {
     font-family: "iranyekan";
     src: url(./../fonts/iranyekan/IRANYekanLight.ttf);
     font-style: normal;
@@ -48,7 +48,7 @@ a {
     font-style: normal;
     font-weight: 700;
   }
-  
+   */
   
   
   /* ------ Fonts ------ */
