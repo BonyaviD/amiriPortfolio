@@ -7,7 +7,7 @@ import Waveform from "@/components/Waveform.vue";
     <div class="hero-section container">
       <div class="hero-content">
         <h1 class="hero-name">Amirhossein Amirikia</h1>
-        <h2 class="hero-job">SoundDesigner<br />VoiceActor</h2>
+        <h2 class="hero-job">Sound Designer<br />Voice Actor</h2>
         <div class="hero-art">
           <Waveform :musicId="1" musicAdress="/audio/Linkin Park - In The End.mp3" />
         </div>

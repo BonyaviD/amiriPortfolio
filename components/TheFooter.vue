@@ -1,15 +1,15 @@
 <script setup>
 import instagram from '@/components/icons/instagram.vue';
-import linkedin from './icons/linkedin.vue';
+import linkedin from '@/components/icons/linkedin.vue';
 </script>
 
 
 <template>
     <div class="footer">
-        <NuxtLink class="icons" to="/" target="_blank" rel="noopener noreferrer" external>
+        <NuxtLink class="icons" to="https://www.instagram.com/amirhosseinamirikia/" target="_blank" rel="noopener noreferrer" external>
             <instagram color="#F1F2F2" viewBox="0 0 24 24" />
         </NuxtLink>
-        <NuxtLink class="icons" to="/" target="_blank" rel="noopener noreferrer" external>
+        <NuxtLink class="icons" to="https://www.linkedin.com/in/amirhosseinamirikia/" target="_blank" rel="noopener noreferrer" external>
             <linkedin color="#F1F2F2" viewBox="0 0 20 24"/>
         </NuxtLink>
     </div>
