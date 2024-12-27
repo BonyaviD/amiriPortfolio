@@ -32,12 +32,12 @@ onMounted(async () => {
   wavesurfer.value = WaveSurfer.create({
     container: `#waveform-${props.musicId}`, // استفاده از id یکتا
     waveColor: "#fff", // رنگ موج
-    progressColor: "#ff5722", // رنگ پیشرفت
+    progressColor: "#F15A29", // رنگ پیشرفت
     barWidth: 4, // عرض میله
     barGap: 2, // فاصله بین میله‌ها
     barRadius: 0, // گردی میله‌ها
-    width: 350,
-    height: 40, // ارتفاع
+    width: 250,
+    height: 60, // ارتفاع
   });
 
   // بارگذاری فایل صوتی
@@ -55,8 +55,8 @@ const togglePlay = () => {
   <div class="player-section">
     <!-- دکمه پخش/توقف -->
     <div @click="togglePlay" class="icon">
-      <pause v-if="isPlay" color="white" />
-      <play v-else color="white" />
+      <pause v-if="isPlay" color="#F1F2F2" />
+      <play v-else color="#F1F2F2" />
     </div>
     <!-- موج صوتی -->
     <div :id="`waveform-${props.musicId}`" class="waveform"></div>
@@ -68,21 +68,23 @@ const togglePlay = () => {
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 0.5rem;
 }
 
 .icon {
-  background-color: black;
+  background-color: var(--secondary-color);
   padding: 0.6rem;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  padding: 1rem;
 }
 
 .waveform {
   flex-grow: 1;
 }
+
 </style>

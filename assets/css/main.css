@@ -19,8 +19,11 @@ a {
 
 :root {
     font-size: 62.5%;
-    --primary-color: #1E5128;
-    --secondary-color: #4E9F3D;
+    --primary-color: #F15A29;
+    --primary-color-op42: #F15A296B;
+    --primary-color-op62: #F15A299E;
+    --secondary-color: #231F20;
+    --light-text-color: #F1F2F2;
   }
   
   

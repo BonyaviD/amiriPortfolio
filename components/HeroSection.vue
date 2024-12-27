@@ -30,8 +30,8 @@ import Waveform from "@/components/Waveform.vue";
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0 10rem;
-  padding-top: 8rem;
+  gap: 10rem 10rem;
+  padding-top: 15rem;
   padding-bottom: 4rem;
 }
 
@@ -59,10 +59,11 @@ import Waveform from "@/components/Waveform.vue";
 .profile-img {
   width: 35rem;
   height: 35rem;
-  background-color: rgb(229, 177, 135);
+  background-color: var(--primary-color);
   border-radius: 1.6rem;
   transform: rotate(-10deg);
 }
+
 .hero-btns {
   display: flex;
   align-items: center;
@@ -85,4 +86,26 @@ import Waveform from "@/components/Waveform.vue";
   padding-top: 1.5rem;
 }
 
+@media (max-width: 1080px) {
+  .hero-name {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .hero-section {
+    flex-direction: column-reverse;
+  }
+}
+
+@media (max-width: 500px) { 
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .profile-img { 
+    width: 25rem;
+    height: 25rem;
+  }
+}
 </style>

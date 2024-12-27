@@ -7,10 +7,10 @@ import linkedin from './icons/linkedin.vue';
 <template>
     <div class="footer">
         <NuxtLink class="icons" to="/" target="_blank" rel="noopener noreferrer" external>
-            <instagram color="white" viewBox="0 0 24 24" />
+            <instagram color="#F1F2F2" viewBox="0 0 24 24" />
         </NuxtLink>
         <NuxtLink class="icons" to="/" target="_blank" rel="noopener noreferrer" external>
-            <linkedin color="white" viewBox="0 0 20 24"/>
+            <linkedin color="#F1F2F2" viewBox="0 0 20 24"/>
         </NuxtLink>
     </div>
 </template>
@@ -21,7 +21,7 @@ import linkedin from './icons/linkedin.vue';
     align-items: center;
     justify-content: center;
     gap: 0 1rem;
-    background-color: rgb(31, 30, 30);
+    background-color: var(--secondary-color);
     border-radius: 5rem 5rem 0 0;
     padding: 4rem 0;
 }

@@ -31,7 +31,8 @@ import AboutMeBackground from "@/components/background/AboutMeBackground.vue";
 <style scoped>
 .about-me-section {
   display: flex;
-  gap: 0 15rem;
+  align-items: center;
+  gap: 5rem 15rem;
   padding: 8rem 5rem;
 }
 .about-me-title {
@@ -53,7 +54,6 @@ import AboutMeBackground from "@/components/background/AboutMeBackground.vue";
   height: 400px;
   border-radius: 24px;
   background-color: rgb(228, 174, 138);
-  font-size: 2.5rem;
 }
 
 .about-me-content-text {
@@ -61,5 +61,30 @@ import AboutMeBackground from "@/components/background/AboutMeBackground.vue";
   top: -5px;
   left: 0;
   transform: rotate(5deg);
+  font-size: 2.4rem;
+}
+
+@media (max-width: 1080px) {
+  .about-me-section {
+    gap: 5rem;
+  }
+}
+
+@media (max-width: 960px) {
+  .about-me-section {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 896px) {
+  .about-me-content-text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 896px) {
+  .about-me-content-text { 
+    font-size: 1.6rem;
+  }
 }
 </style>
